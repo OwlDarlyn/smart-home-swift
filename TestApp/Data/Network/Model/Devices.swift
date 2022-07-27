@@ -11,7 +11,7 @@ struct DevicesModel: Codable {
     var devices: DevicesDetailModel?
     var user: UserDetailModel?
     var address: AddressDetailModel?
-    
+        
     static func create(_ dict: [String: Any]) -> DevicesModel? {
         guard let devices = dict["devices"] as? [String: Any] else {
                   
@@ -29,14 +29,10 @@ struct DevicesModel: Codable {
                   }
 
             return DevicesModel(devices: DevicesDetailModel.create(devices))
-            return UserModel(user: UserDetailModel.create(user))
-            return AddressModel(user: AddressDetailModel.create(address))
-
+            
               }
         return DevicesModel(devices: DevicesDetailModel.create(devices))
-        return UserModel(user: UserDetailModel.create(user))
-        return AddressModel(user: AddressDetailModel.create(address))
-
+        
     }
 }
 
@@ -80,7 +76,6 @@ struct DevicesDetailModel: Codable {
                 productType = productTypeValue
             }
             
-            
                  
            return DevicesDetailModel(
                     id: id,
@@ -89,6 +84,7 @@ struct DevicesDetailModel: Codable {
                     mode: mode,
                     productType: productType)
               }
+        
         return DevicesDetailModel(
             id: id,
             deviceName: deviceName,
@@ -96,9 +92,9 @@ struct DevicesDetailModel: Codable {
             mode: mode,
             productType: productType)
     }
+}
     
-    
-    struct UserDetailModel: Codable {
+        struct UserDetailModel: Codable {
         var firstName: String?
         var lastName: String?
         var address: String?
@@ -142,7 +138,7 @@ struct DevicesDetailModel: Codable {
 
         }
     }
-}
+
 
 struct AddressDetailModel: Codable {
     var city: String?
